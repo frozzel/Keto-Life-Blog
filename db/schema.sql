@@ -1,0 +1,2 @@
+DROP DATABASE IF EXISTS Keto_Life_db;
+CREATE DATABASE Keto_Life_db;

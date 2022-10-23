@@ -1,0 +1,32 @@
+{
+  "name": "keto-life-blog",
+  "version": "1.0.0",
+  "description": "Keto diet blog to share secerets to sucsess, recipes and more!",
+  "main": "server.js",
+  "scripts": {
+    "test": "test",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/frozzel/Keto-Life-Blog.git"
+  },
+  "keywords": [
+    "keto",
+    "diet",
+    "blog"
+  ],
+  "author": "Dennis Hickox",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/frozzel/Keto-Life-Blog/issues"
+  },
+  "homepage": "https://github.com/frozzel/Keto-Life-Blog#readme",
+  "dependencies": {
+    "bcrypt": "^5.1.0",
+    "dotenv": "^16.0.3",
+    "express": "^4.18.2",
+    "mysql2": "^2.3.3",
+    "sequelize": "^6.25.3"
+  }
+}
