@@ -1,20 +1,20 @@
 const router = require('express').Router();
-const { Articles } = require('../models/');
+const { Recipes } = require('../models/');
 const withAuth = require('../utils/auth');
 
 router.get('/', withAuth, async (req, res) => {
   try {
-    const artData = await Articles.findAll({
+    const recData = await Recipes.findAll({
       where: {
         userId: req.session.userId,
       },
     });
 
-    const articles = artData.map((article) => article.get({ plain: true }));
+    const recipes = recData.map((recipe) => recipe.get({ plain: true }));
 
-    res.render('all-artciles-admin', {
-      layout: 'myArticles',
-      articles,
+    res.render('all-recipes-admin', {
+      layout: 'myRecipes',
+      recipes,
     });
   } catch (err) {
     res.redirect('login');
@@ -22,21 +22,21 @@ router.get('/', withAuth, async (req, res) => {
 });
 
 router.get('/new', withAuth, (req, res) => {
-  res.render('new-article', {
-    layout: 'myArticles',
+  res.render('new-recipe', {
+    layout: 'myRecipes',
   });
 });
 
 router.get('/edit/:id', withAuth, async (req, res) => {
   try {
-    const artData = await Articles.findByPk(req.params.id);
+    const recData = await Recipes.findByPk(req.params.id);
 
-    if (artData) {
-      const article = artData.get({ plain: true });
+    if (recData) {
+      const recipe = recData.get({ plain: true });
 
-      res.render('edit-article', {
-        layout: 'myArticles',
-        article,
+      res.render('edit-recipe', {
+        layout: 'myRecipes',
+        recipe,
       });
     } else {
       res.status(404).end();
