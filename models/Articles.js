@@ -5,12 +5,17 @@ class Articles extends Model {}
 
 Articles.init(
   {
-    title: DataTypes.STRING,
-    body: DataTypes.STRING,
-    image_Url: DataTypes.STRING
-  },
+    title: { type: DataTypes.STRING},
+    body: { type: DataTypes.STRING},
+    image_Url: { type: DataTypes.STRING,
+                 validate: {
+                  isUrl: true
+                },
+            },
+          },
   {
-    sequelize
+    sequelize,
+    timestamps: true,
   }
 );
 
