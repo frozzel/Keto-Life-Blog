@@ -21,12 +21,17 @@ User.init(
       username: {
          type: DataTypes.STRING,
          allowNull: false,
-         unique: true
+         unique: true,
+         validate: {
+            isAlphanumeric: true,
+          },
       },
       password: {
          type: DataTypes.STRING,
          allowNull: false,
-         validate: { len: [ 3 ] }
+         validate: { isAlphanumeric: true,
+                     len: [ 8 ] 
+                  },
       }
    },
    {

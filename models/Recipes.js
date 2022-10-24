@@ -5,13 +5,18 @@ class Recipes extends Model {}
 
 Recipes.init(
   {
-    title: DataTypes.STRING,
-    instructions: DataTypes.STRING,
-    ingredients: DataTypes.STRING,
-    image_Url: DataTypes.STRING
+    title: { type: DataTypes.STRING},
+    instructions:{ type: DataTypes.STRING},
+    ingredients:{ type: DataTypes.STRING},
+    image_Url: { type: DataTypes.STRING,
+        validate: {
+         isUrl: true
+       },
+   },
   },
   {
-    sequelize
+    sequelize,
+    timestamps: true,
   }
 );
 
