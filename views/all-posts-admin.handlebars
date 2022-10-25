@@ -1,0 +1,22 @@
+
+ <div class="edit row align-center">Edit and Delete Your Post!</div>
+   <button type="submit" id="new-post-btn" class="btn">
+    <a class="new-post-btn" type="button" href="/dashboard/new">New Post</a></button>
+
+<div class="post row justify-space-between">
+  {{#each posts}}
+
+  <div class="card w-25" style="">
+  <img src="{{image}}" class="card-img-top" alt="...">
+  <div class="card-body">
+    <h5 class="card-title"><a href="/dashboard/edit/{{id}}">{{title}}</a></h5>
+    <p class="card-text">{{body}}</p>
+     <p class="card-text"><small>Posted by {{User.username}} on {{format_date createdAt}}</small></p>
+  </div>
+</div>
+    {{!-- <a class="list-item flex-row justify-space-between" href="/dashboard/edit/{{id}}">
+      <span>{{title}}</span>
+      <span>{{format_date createdAt}}</span>
+    </a> --}}
+  {{/each}}
+</div>
