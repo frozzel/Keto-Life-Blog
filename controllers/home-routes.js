@@ -1,25 +1,25 @@
 const router = require('express').Router();
-const { Articles, Recipes, Comment, User } = require('../models/');
+const { Post, Comment, User } = require('../models/');
 
-// get all arcticles for homepage
+// get all posts for homepage
 router.get('/', async (req, res) => {
   try {
-    const artData = await Articles.findAll({
+    const postData = await Post.findAll({
       include: [User],
     });
 
-    const articles = artData.map((article) => article.get({ plain: true }));
+    const posts = postData.map((post) => post.get({ plain: true }));
 
-    res.render('all-posts', { articles });
+    res.render('all-posts', { posts });
   } catch (err) {
     res.status(500).json(err);
   }
 });
 
-// get single article
-router.get('/articles/:id', async (req, res) => {
+// get single post
+router.get('/post/:id', async (req, res) => {
   try {
-    const artData = await Articles.findByPk(req.params.id, {
+    const postData = await Post.findByPk(req.params.id, {
       include: [
         User,
         {
@@ -29,10 +29,10 @@ router.get('/articles/:id', async (req, res) => {
       ],
     });
 
-    if (artData) {
-      const article = artData.get({ plain: true });
+    if (postData) {
+      const post = postData.get({ plain: true });
 
-      res.render('single-article', { article });
+      res.render('single-post', { post });
     } else {
       res.status(404).end();
     }
@@ -58,46 +58,5 @@ router.get('/signup', (req, res) => {
 
   res.render('signup');
 });
-
-// get all recipes for homepage
-// router.get('/', async (req, res) => {
-//     try {
-//       const recData = await Recipes.findAll({
-//         include: [User],
-//       });
-  
-//       const recipes = recData.map((recipe) => recipe.get({ plain: true }));
-  
-//       res.render('all-posts', { recipes });
-//     } catch (err) {
-//       res.status(500).json(err);
-//     }
-//   });
-  
-  // get single recipe
-//   router.get('/recipes/:id', async (req, res) => {
-//     try {
-//       const recData = await Recipes.findByPk(req.params.id, {
-//         include: [
-//           User,
-//           {
-//             model: Comment,
-//             include: [User],
-//           },
-//         ],
-//       });
-  
-//       if (recData) {
-//         const recipe = recData.get({ plain: true });
-  
-//         res.render('single-recipe', { recipe });
-//       } else {
-//         res.status(404).end();
-//       }
-//     } catch (err) {
-//       res.status(500).json(err);
-//     }
-//   });
-
 
 module.exports = router;

@@ -1,0 +1,105 @@
+
+ html,
+ body {
+   height: 100%;
+ }
+ .headimg  {
+    background-image: url('../images/pexels-jane-doan-1105166.jpg');
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center center;
+    height: 100%;
+    width: 100%;
+    color: #eeeeee;
+    text-align: center;
+    display: table;
+   
+
+
+}
+.OpenStatement{
+    color: white;
+    padding: 30px;
+    font-size: 70px;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    justify-content: center;
+    
+    text-shadow: 2px 2px 3px rgb(8, 8, 8);
+    
+    margin-top: 10%;
+    
+}
+main {
+    background-color: transparent;
+    padding: 10px 70px;
+    color: #666666;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+.recipes{
+    color: red;
+    padding: 20px;
+    font-size: 50px;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    text-align: center;
+    text-shadow: 2px 2px 3px rgb(8, 8, 8);
+}
+
+.card{
+    
+    margin: 10px;
+}
+.about{
+    background-image: url('../images/pexels-jane-doan-793785.jpg');
+    height: 100%;
+    width: 100%;
+    background-color: rgb(226, 47, 64);
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center center;
+   
+    color: #eeeeee;
+    text-align: center;
+    display: table;
+    
+}
+.edit{
+    justify-content: space-between;
+    color: red;
+    padding: 20px;
+    font-size: 50px;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    text-align: center;
+    text-shadow: 2px 2px 3px rgb(8, 8, 8);
+}
+.post{
+    justify-content: space-evenly;
+}
+.new-post-btn{
+    
+    font-family: 'Courier New', Courier, monospace;
+    background-color: rgb(226, 47, 64);
+    border-radius: 13px;
+    width: 200px;
+    height: 35px;
+    color: white;
+    text-decoration-color: white;
+    text-decoration-line: none;
+    padding: 5px;
+}
+.login{
+    background-size: cover;
+    background-position: center center;
+    height: 100%;
+    width: 100%;
+    color: black;
+    text-align: center;
+    display: table;
+    background-color: transparent;
+}
+.button{
+    font-weight: 30px;
+}
